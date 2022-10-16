@@ -11,6 +11,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { EditorialComponent } from './editorial/editorial.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModLibroComponent } from './mod-libro/mod-libro.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { EditorialComponent } from './editorial/editorial.component';
     NavBarComponent,
     LoginComponent,
     RegisterComponent,
-    EditorialComponent
+    EditorialComponent,
+    UsuariosComponent,
+    ModLibroComponent
   ],
   imports: [
     BrowserModule,
