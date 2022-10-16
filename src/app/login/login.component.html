@@ -1,20 +1,23 @@
-<div class="login">
+
+<div class="login"  xmlns:text-align="http://www.w3.org/1999/xhtml" xmlns:text-align="http://www.w3.org/1999/xhtml"
+     xmlns:text-align="http://www.w3.org/1999/xhtml">
   <form class="custom-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <h1>Login</h1>
-    <input
-      type="text"
-      formControlName="login"
-      name="login"
-      placeholder="Login"
-      required="required"
-    />
-    <input
-      type="password"
-      formControlName="password"
-      name="password"
-      placeholder="Password"
-      required="required"
-    />
-    <button type="submit">Ingresar</button>
+    <h1 style="text-align:center">Autenticación</h1>
+    <hr size="5" noshade="noshade" color="#007bff">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Usuario:</label>
+      <input type="email" formControlName="login" name="login" placeholder="Login" required="required" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label type="password" for="exampleInputPassword1" class="form-label">Contraseña:</label>
+      <input formControlName="password" name="password" placeholder="Password" required="required" type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <hr size="5" noshade="noshade" color="#007bff">
+    <div align="center">
+      <button type="submit" class="btn btn-primary btn-lg">Login</button>
+    </div>
+
   </form>
 </div>
+
+

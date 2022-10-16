@@ -1,0 +1,16 @@
+.topnav {
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  text-align: center;
+  margin:5px;
+  font-size: 17px;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}

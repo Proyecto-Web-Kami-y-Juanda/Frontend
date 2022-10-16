@@ -1,11 +1,27 @@
-<nav class="navbar navbar-dark bg-dark ">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="assets/img/icon-books.png" alt="" width="30" height="24">Tienda de Libros
-    </a>
-    <a routerLink="/login" class="btn btn-primary" role="button">
-      Login
-    </a>
-  </div>
-</nav>
 
+<div class="topnav">
+  <nav class="navbar navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="#">
+      <img src="assets/icono.png" alt="" width="30" height="24"> Tienda de Libros
+    </a>
+
+    <div class="topnav-right">
+      <a>
+
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </a>
+      <a>
+        <form class="form-inline">
+          <button class="btn btn-ligth btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </a>
+
+      <a routerLink="/login" class="btn btn-primary" role="button">Login</a>
+    </div>
+
+
+  </nav>
+</div>
