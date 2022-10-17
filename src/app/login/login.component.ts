@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 import { LoginService } from '../login.service'
 
 @Component({
@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-
       let userParam: string;
       let passParam: string;
       userParam = ''+this.checkoutForm.value.login;

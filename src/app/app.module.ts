@@ -14,6 +14,7 @@ import { EditorialComponent } from './editorial/editorial.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModLibroComponent } from './mod-libro/mod-libro.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
