@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BookService} from '../book.service';
 
 @Component({
   selector: 'app-nav-bar',
