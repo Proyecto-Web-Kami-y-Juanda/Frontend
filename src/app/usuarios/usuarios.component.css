@@ -1,0 +1,11 @@
+.usuarios
+{
+margin:5em;
+}
+
+table
+{
+  border: 0.5px solid grey;
+  border-collapse: collapse;
+  cellspacing:1;
+}
