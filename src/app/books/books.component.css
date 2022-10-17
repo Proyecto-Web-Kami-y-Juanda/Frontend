@@ -1,4 +1,11 @@
 /* Style the form - display items horizontally */
+
+.todo
+{
+  margin:3em;
+}
+
+
 .form-inline {
   display: flex;
   flex-flow: row wrap;
@@ -8,7 +15,7 @@
 /* Style the input fields */
 .form-inline input {
   vertical-align: middle;
-  width:88%;
+  width:80%;
   margin: 5px 10px 5px 0;
   padding: 10px;
   background-color: #fff;
@@ -18,7 +25,7 @@
 /* Style the submit button */
 .form-inline button {
   padding: 10px 20px;
-  width:10%;
+  width:19%;
   background-color: dodgerblue;
   border: 1px solid #ddd;
   color: white;
@@ -28,14 +35,4 @@
   background-color: royalblue;
 }
 
-/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
-@media (max-width: 800px) {
-  .form-inline input {
-    margin: 10px 0;
-  }
 
-  .form-inline {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}

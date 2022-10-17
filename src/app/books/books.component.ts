@@ -37,6 +37,7 @@ export class BooksComponent implements OnInit {
   }
 
      onSubmit(): void {
+
           let searchParam: string;
           searchParam = ''+this.checkoutForm.value.search;
           console.log('FormValue:', this.checkoutForm.value);
@@ -46,9 +47,17 @@ export class BooksComponent implements OnInit {
             (data: Book[])=>
             {  console.log(data);
                this.books = data;
-
             }
           );
+
+          let id : number=+searchParam;
+
+           this.bookService.searchByEditorial(id).subscribe(
+                      (data: Book[])=>
+                      {  console.log(data);
+                         this.books= data;
+                      }
+                    );
           this.checkoutForm.reset();
       }
 

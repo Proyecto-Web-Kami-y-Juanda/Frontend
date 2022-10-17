@@ -25,5 +25,12 @@ export class BookService
    return this.http.get<Book[]>("http://localhost:8090/books/nam",{params:params});
   }
 
+  searchByEditorial(id : number): Observable<Book[]>{
+   const params = new HttpParams()
+         .set('editorialId', id)
+  return this.http.get<Book[]>("http://localhost:8090/books/editorial",{params:params});
+ }
+
+
 
 }
