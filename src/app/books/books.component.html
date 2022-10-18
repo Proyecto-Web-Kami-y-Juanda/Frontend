@@ -14,9 +14,9 @@
         <img [src]="book.imageUrl" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{book.name}}</h5>
-          <p>
-            <a (href)="searchBooksByEditorial(book)" class="badge text-bg-info"[text]="">????????</a>
-          </p>
+          <form class="form-inline" [formGroup]="checkoutForm" (ngSubmit)="editorial(book.editorialId)">
+            <a (click)="editorial(book.editorialId)" class="badge text-bg-info"[text]="">{{book.editorialId}}</a>
+          </form>
           <p class="card-text">{{book.description}}</p>
         </div>
         <div class="card-footer text-muted">

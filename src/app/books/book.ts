@@ -6,4 +6,5 @@ export interface Book{
   description: string;
   imageUrl: string;
   editorial: Editorial;
+  editorialId: number;
 }

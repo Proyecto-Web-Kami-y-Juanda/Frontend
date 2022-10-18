@@ -61,7 +61,22 @@ export class BooksComponent implements OnInit {
           this.checkoutForm.reset();
       }
 
-
+      editorial(id: number): void
+      {
+                let searchParam: string;
+                searchParam = ''+this.checkoutForm.value.search;
+                console.log('FormValue:', this.checkoutForm.value);
+                console.log('Search:', this.checkoutForm.value.search);
+             // buscar por id editorial
+            //  let id : number=+searchParam;
+                  this.bookService.searchByEditorial(id).subscribe(
+                             (data: Book[])=>
+                              {  console.log(data);
+                                 this.books =data;
+                                 this.books.concat(data);
+                              }
+                            );
+      }
 
 
 }
