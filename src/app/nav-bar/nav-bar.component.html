@@ -5,11 +5,14 @@
 
 <div class="topnav">
   <nav class="navbar navbar-dark bg-dark">
-
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="">
       <img src="assets/icono.png" alt="" width="30" height="24"> Tienda de Libros
     </a>
-    <div class="topnav-right">s
+    <div class="topnav-right">
+      <a><form class="form-inline" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <a><input type="search" formControlName="search" name="search" placeholder="Search" required="required" class="form-control"  aria-label="Search"></a>
+       <a><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></a>
+      </form></a>
       <a routerLink="/login" class="btn btn-primary" role="button">Login</a>
       <a routerLink="/usuarios" class="btn btn-primary" role="button">Usuarios</a>
     </div>

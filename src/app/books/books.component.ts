@@ -42,22 +42,22 @@ export class BooksComponent implements OnInit {
           searchParam = ''+this.checkoutForm.value.search;
           console.log('FormValue:', this.checkoutForm.value);
           console.log('Search:', this.checkoutForm.value.search);
-
           this.bookService.searchByName(searchParam).subscribe(
             (data: Book[])=>
             {  console.log(data);
                this.books = data;
             }
           );
-
           let id : number=+searchParam;
 
-           this.bookService.searchByEditorial(id).subscribe(
+         // buscar por id editorial
+         /*  this.bookService.searchByEditorial(id).subscribe(
                       (data: Book[])=>
                       {  console.log(data);
-                         this.books= data;
+                         this.books =data;
+                         this.books.concat(data);
                       }
-                    );
+                    );*/
           this.checkoutForm.reset();
       }
 

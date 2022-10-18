@@ -31,11 +31,18 @@ export class LoginComponent implements OnInit {
       console.log('Login:', this.checkoutForm.value.login);
       console.log('Password:', this.checkoutForm.value.password);
       this.loginService.login(userParam, passParam).subscribe(
-                          data => {
-                                    console.log(data);
-                                    this.loginService.setToken(data.token);
-                                    this.router.navigateByUrl('/');
-                                  });
+      {
+        next:(data) => {
+                          console.log(data);
+                          this.loginService.setToken(data.token);
+                          this.router.navigateByUrl('/');
+                          alert("Sesion iniciada")
+                        },
+                        error: (err)=>
+                        {
+                        alert("Usuario no encontrado, verifica el usuario o contraseña")
+                        }
+      });
       this.checkoutForm.reset();
   }
 
