@@ -5,6 +5,5 @@ export interface Book{
   name: string;
   description: string;
   imageUrl: string;
-  editorial: Editorial;
   editorialId: number;
 }

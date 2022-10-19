@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Book} from './book'
 import { BookService } from '../book.service';
+import { EditorialService} from '../editorial.service';
 import { FormBuilder } from '@angular/forms';
 import { NavBarComponent } from '../nav-bar/nav-bar.component'
 
@@ -20,11 +21,9 @@ export class BooksComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.bookService.searchAllBooks().subscribe(
-    (data: Book[]) => {
-      console.log(data);
-      this.books = data;
-    });
+
+    this.bookService.searchAllBooks();
+    this.bookService.onResults().subscribe(results=>{this.books=results});
   }
 
   ngOnChanges(): void
@@ -37,28 +36,6 @@ export class BooksComponent implements OnInit {
   }
 
      onSubmit(): void {
-
-          let searchParam: string;
-          searchParam = ''+this.checkoutForm.value.search;
-          console.log('FormValue:', this.checkoutForm.value);
-          console.log('Search:', this.checkoutForm.value.search);
-          this.bookService.searchByName(searchParam).subscribe(
-            (data: Book[])=>
-            {  console.log(data);
-               this.books = data;
-            }
-          );
-          let id : number=+searchParam;
-
-         // buscar por id editorial
-         /*  this.bookService.searchByEditorial(id).subscribe(
-                      (data: Book[])=>
-                      {  console.log(data);
-                         this.books =data;
-                         this.books.concat(data);
-                      }
-                    );*/
-          this.checkoutForm.reset();
       }
 
       editorial(id: number): void

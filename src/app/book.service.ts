@@ -9,20 +9,21 @@ import {Book} from './books/book';
 })
 export class BookService
 {
-
-  private books = new BehaviorSubject <string>('espero');
-  public customSearch = this.books.asObservable();
-
+  resultados = new BehaviorSubject <Array<Book>>([]);
   constructor(private http: HttpClient) { }
 
-  searchAllBooks(): Observable<Book[]>{
-    return this.http.get<Book[]>("http://localhost:8090/books/all");
-  }
+  searchAllBooks(){
+          this.http.get<Book[]>("http://localhost:8090/books/all").subscribe(
+              results => {
+                  this.resultados.next(results)
+              }
+          );
+      }
 
-  searchByName(name: string): Observable<Book[]>{
+  searchByName(name: string){
     const params = new HttpParams()
           .set('name', name)
-   return this.http.get<Book[]>("http://localhost:8090/books/nam",{params:params});
+    this.http.get<Book[]>("http://localhost:8090/books/nam",{params:params}).subscribe(  results => this.resultados.next(results));
   }
 
   searchByEditorial(id : number): Observable<Book[]>{
@@ -31,5 +32,8 @@ export class BookService
   return this.http.get<Book[]>("http://localhost:8090/books/editorial",{params:params});
  }
 
+ onResults(){
+         return this.resultados.asObservable();
+     }
 
 }

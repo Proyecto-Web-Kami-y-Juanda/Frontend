@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Book} from '../books/book'
 import { FormBuilder } from '@angular/forms';
 import {BookService} from '../book.service';
+import { NgForm }   from '@angular/forms';
 
 @Component({
   selector: 'app-nav-bar',
@@ -18,6 +19,7 @@ export class NavBarComponent implements OnInit
       });
 
   books: Book[] = [];
+  resultado: string = "";
   constructor(private formBuilder: FormBuilder,
                             private bookService: BookService,
                              public router: Router ) { }
@@ -26,21 +28,9 @@ export class NavBarComponent implements OnInit
 
   }
 
-
-   onSubmit(): void {
-        let searchParam: string;
-        searchParam = ''+this.checkoutForm.value.search;
-        console.log('FormValue:', this.checkoutForm.value);
-        console.log('Search:', this.checkoutForm.value.search);
-
-        this.bookService.searchByName(searchParam).subscribe(
-          (data: Book[])=>
-          {  console.log(data);
-             this.books = data;
-
-          }
-        );
-        this.checkoutForm.reset();
+   onSubmit(searchForm: NgForm): void
+   {
+       this.bookService.searchByName(searchForm.value.filter);
     }
 
 }
