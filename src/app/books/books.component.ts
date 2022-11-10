@@ -1,7 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Book} from './book'
-import { BookService } from '../book.service';
-import { EditorialService} from '../editorial.service';
+import { BookService } from '../book.service'
 import { FormBuilder } from '@angular/forms';
 import { NavBarComponent } from '../nav-bar/nav-bar.component'
 
@@ -13,6 +12,7 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component'
 export class BooksComponent implements OnInit {
 
   @Input () books: Book[] = [];
+  idLibro : number;
   constructor(private formBuilder: FormBuilder,private bookService: BookService) { }
 
      checkoutForm = this.formBuilder.group({
@@ -21,7 +21,6 @@ export class BooksComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     this.bookService.searchAllBooks();
     this.bookService.onResults().subscribe(results=>{this.books=results});
   }
@@ -35,8 +34,7 @@ export class BooksComponent implements OnInit {
     return this.books;
   }
 
-     onSubmit(): void {
-      }
+
 
       editorial(id: number): void
       {
@@ -50,9 +48,13 @@ export class BooksComponent implements OnInit {
                              (data: Book[])=>
                               {  console.log(data);
                                  this.books =data;
-                                 this.books.concat(data);
                               }
                             );
+      }
+
+       asignarId(id_number:number): void
+      {
+        this.idLibro = id_number;
       }
 
 

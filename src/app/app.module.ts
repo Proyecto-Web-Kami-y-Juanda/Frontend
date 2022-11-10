@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { EditorialComponent } from './editorial/editorial.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModLibroComponent } from './mod-libro/mod-libro.component';
+import { LibroInfoComponent } from './libro-info/libro-info.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ModLibroComponent } from './mod-libro/mod-libro.component';
     RegisterComponent,
     EditorialComponent,
     UsuariosComponent,
-    ModLibroComponent
+    ModLibroComponent,
+    LibroInfoComponent
   ],
   imports: [
     BrowserModule,

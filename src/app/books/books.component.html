@@ -16,10 +16,13 @@
           <p class="card-text">{{book.description}}</p>
         </div>
         <div class="card-footer text-muted">
-          <a href="#" class="btn btn-primary">Detalle</a>
+          <a (click)="asignarId(book.id)"  class="btn btn-primary">Detalle</a>
+          <h1>{{idLibro}}</h1>
+          <app-libro-info [idLibro]="idLibro"></app-libro-info>
+          <a href="/infolibros"  class="btn btn-primary">Detalle</a>
         </div>
-      </div>
     </div>
   </div>
+</div>
 </div>
 </div>
