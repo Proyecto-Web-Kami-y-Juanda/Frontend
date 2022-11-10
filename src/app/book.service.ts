@@ -20,6 +20,12 @@ export class BookService
           );
       }
 
+  searchById(id: number){
+    const params = new HttpParams()
+          .set('id', id)
+    return this.http.get<Book>("http://localhost:8090/id",{params:params});
+  }
+
   searchByName(name: string){
     const params = new HttpParams()
           .set('name', name)

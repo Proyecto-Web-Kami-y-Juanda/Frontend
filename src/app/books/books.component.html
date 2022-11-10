@@ -1,28 +1,27 @@
 <div class="todo">
 
 
-<div class="container mt-4 vj-destacados">
-  <div class="row">
-  </div>
-  <div class="row">
-    <div *ngFor="let book of books" class="col-md-2 mb-3">
-      <div class="card h-100">
-        <img [src]="book.imageUrl" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{book.name}}</h5>
-          <form class="form-inline" [formGroup]="checkoutForm" (ngSubmit)="editorial(book.editorialId)">
-            <a (click)="editorial(book.editorialId)" class="badge text-bg-info"[text]="">{{book.editorialId}}</a>
-          </form>
-          <p class="card-text">{{book.description}}</p>
+  <div class="container mt-4 vj-destacados">
+    <div class="row">
+    </div>
+    <div class="row">
+      <div *ngFor="let book of books" class="col-md-2 mb-3">
+        <div class="card h-100">
+          <img [src]="book.imageUrl" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{book.name}}</h5>
+            <form class="form-inline" [formGroup]="checkoutForm" (ngSubmit)="editorial(book.editorialId)">
+              <a (click)="editorial(book.editorialId)" class="badge text-bg-info"[text]="">{{book.editorialId}}</a>
+            </form>
+            <p class="card-text">{{book.description}}</p>
+          </div>
+          <div class="card-footer text-muted">
+
+            <a (click)="enviarHijo(book.id)"  class="btn btn-primary">Detalle</a>
+
+          </div>
         </div>
-        <div class="card-footer text-muted">
-          <a (click)="asignarId(book.id)"  class="btn btn-primary">Detalle</a>
-          <h1>{{idLibro}}</h1>
-          <app-libro-info [idLibro]="idLibro"></app-libro-info>
-          <a href="/infolibros"  class="btn btn-primary">Detalle</a>
-        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
 </div>

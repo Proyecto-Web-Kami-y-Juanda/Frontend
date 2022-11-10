@@ -8,13 +8,23 @@ import { BookService} from '../book.service'
   templateUrl: './libro-info.component.html',
   styleUrls: ['./libro-info.component.css']
 })
-export class LibroInfoComponent implements OnInit {
+export class LibroInfoComponent implements OnInit
+{
 
-  @Input() idLibro: number;
+
+  @Input() idLibro: number =4;
+  infoB : Book;
 
   constructor(private bookService: BookService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+    this.bookService.searchById(this.idLibro).subscribe(
+    (data:Book)=>
+      { this.infoB=data;
+      }
+    );
   }
-}
 
+
+}
