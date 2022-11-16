@@ -9,7 +9,8 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component'
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent implements OnInit {
+export class BooksComponent implements OnInit
+{
 
   @Input () books: Book[] = [];
   idLibro : number;
@@ -30,7 +31,8 @@ export class BooksComponent implements OnInit {
 
   }
 
-  searchBooksByEditorial(book: Book): Book[]{
+  searchBooksByEditorial(book: Book): Book[]
+  {
     return this.books;
   }
 

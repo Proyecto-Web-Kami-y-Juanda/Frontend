@@ -1,13 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BooksComponent } from './books.component';
-
-describe('BooksComponent', () => {
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+describe('BooksComponent', () =>
+{
   let component: BooksComponent;
   let fixture: ComponentFixture<BooksComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async () =>
+  {
     await TestBed.configureTestingModule({
+    imports:[
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule
+        ],
       declarations: [ BooksComponent ]
     })
     .compileComponents();
@@ -17,7 +24,19 @@ describe('BooksComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', () =>
+  {
     expect(component).toBeTruthy();
+  }
+  );
+  it('Revisar lista vacia', () =>
+  {
+      expect(component.books).toEqual([]);
   });
+/*
+  it('revisar searchBooksByEditorial') =>
+  {
+     //expect(component.searchBooksByEditorial).
+  }*/
+
 });

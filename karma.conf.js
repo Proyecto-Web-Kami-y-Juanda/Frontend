@@ -25,6 +25,20 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
+     check:{
+                    global:{
+                      statements:75,
+                      branches:75,
+                      functions: 75,
+                      lines: 75
+                    }
+                  },
+                  watermarks: {
+                    statements: [50,75],
+                    functions:[50,75],
+                    branches:[50,75],
+                    lines:[50,75]
+                  },
       dir: require('path').join(__dirname, './coverage/my-app'),
       subdir: '.',
       reporters: [
