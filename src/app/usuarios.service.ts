@@ -10,12 +10,13 @@ import { Usuario } from './Modelo/Usuario';
 export class UsuariosService {
 
   results = new BehaviorSubject <Array<Usuario>>([]);
-  constructor(private http:HttpClient, 
-    private loginService: LoginService) { 
+  constructor(private http:HttpClient,
+    private loginService: LoginService) {
   }
   url = 'http://localhost:8091/all'
 
-  getUsuarios(){
+  getUsuarios()
+  {
     this.http.get<Usuario[]>(this.url,{
       headers:{
         "Authorization":this.loginService.getToken()

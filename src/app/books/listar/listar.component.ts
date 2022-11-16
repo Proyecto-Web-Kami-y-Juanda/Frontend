@@ -25,7 +25,8 @@ export class ListarComponent implements OnInit {
     this.router.navigate(["nuevoLibro"])
   }
 
-  delete(userName: number){
+  delete(userName: number)
+  {
     this.service.deleteBook(userName).subscribe(
      result => {
        console.log(result)

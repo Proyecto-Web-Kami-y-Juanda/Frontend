@@ -25,7 +25,7 @@ export class EditBookComponent implements OnInit {
   id: any
   book!: Book
 
-  constructor(private reouter:Router, 
+  constructor(private reouter:Router,
               private service:BookService,
               private formBuilder: FormBuilder,
               private route: ActivatedRoute,
@@ -44,7 +44,8 @@ export class EditBookComponent implements OnInit {
     })
   }
 
-  onSubmit(): void{
+  onSubmit(): void
+  {
     let idParam: string;
     let imageUrlParam: string;
     let nameParam: string;

@@ -23,4 +23,21 @@ describe('AddComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+   it('should create', () => {
+      component.onSubmit()
+    });
+
+     it('should create', () =>
+     {
+         component.checkoutForm.value.inactivate="true"
+         component.onSubmit()
+      });
+
+    it('should create', () =>
+       {
+           component.checkoutForm.value.inactivate="false"
+           component.onSubmit()
+        });
+
+
 });

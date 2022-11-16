@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { BookService } from 'src/app/book.service';
 import {FormBuilder} from '@angular/forms';
 
-
 @Component({
   selector: 'app-add-book',
   templateUrl: './add-book.component.html',
@@ -22,14 +21,15 @@ export class AddBookComponent implements OnInit {
     cantidad: ''
   });
 
-  constructor(private reouter:Router, 
+  constructor(private reouter:Router,
               private service:BookService,
               private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(): void{
+  onSubmit(): void
+  {
     let idParam: string;
     let imageUrlParam: string;
     let nameParam: string;

@@ -13,4 +13,15 @@ describe('LoginService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+  it('login', () => {
+      service.login("kmor4","123a")
+    });
+
+   it('token', () => {
+       service.setToken("1233333")
+     });
+
+      it('getToken', () => {
+          service.getToken()
+        });
 });

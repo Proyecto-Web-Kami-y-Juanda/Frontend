@@ -21,4 +21,11 @@ describe('ListarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+    it('should create', () => {
+       component.ngOnInit()
+    });
+
+
+
 });

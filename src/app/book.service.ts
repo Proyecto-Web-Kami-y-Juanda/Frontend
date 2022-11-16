@@ -21,7 +21,8 @@ export class BookService
           );
       }
 
-  searchByName(name: string){
+  searchByName(name: string)
+  {
     const params = new HttpParams()
           .set('name', name)
     this.http.get<Book[]>("http://localhost:8090/books/nam",{params:params}).subscribe(  results => this.resultados.next(results));

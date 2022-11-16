@@ -21,7 +21,8 @@ export class BooksComponent implements OnInit
         });
 
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     this.bookService.searchAllBooks();
     this.bookService.onResults().subscribe(results=>{this.books=results});
   }
@@ -36,23 +37,21 @@ export class BooksComponent implements OnInit
     return this.books;
   }
 
-
-
-      editorial(id: number): void
-      {
-                let searchParam: string;
-                searchParam = ''+this.checkoutForm.value.search;
-                console.log('FormValue:', this.checkoutForm.value);
-                console.log('Search:', this.checkoutForm.value.search);
-             // buscar por id editorial
-            //  let id : number=+searchParam;
-                  this.bookService.searchByEditorial(id).subscribe(
-                             (data: Book[])=>
-                              {  console.log(data);
-                                 this.books =data;
-                              }
-                            );
-      }
+  editorial(id: number): void
+  {
+            let searchParam: string;
+            searchParam = ''+this.checkoutForm.value.search;
+            console.log('FormValue:', this.checkoutForm.value);
+            console.log('Search:', this.checkoutForm.value.search);
+         // buscar por id editorial
+        //  let id : number=+searchParam;
+              this.bookService.searchByEditorial(id).subscribe(
+                         (data: Book[])=>
+                          {  console.log(data);
+                             this.books =data;
+                          }
+                        );
+  }
 
        asignarId(id_number:number): void
       {

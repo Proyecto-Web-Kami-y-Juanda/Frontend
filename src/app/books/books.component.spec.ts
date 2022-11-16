@@ -33,10 +33,19 @@ describe('BooksComponent', () =>
   {
       expect(component.books).toEqual([]);
   });
-/*
-  it('revisar searchBooksByEditorial') =>
+  it('Editorial', () =>
   {
-     //expect(component.searchBooksByEditorial).
-  }*/
+      component.editorial(0);
+  });
+  it('AsignarID', () =>
+  {
+      component.asignarId(0);
+      expect(component.idLibro).toEqual(0);
+  });
+
+    it('iniciar', () =>
+    {
+        component.ngOnInit()
+    });
 
 });

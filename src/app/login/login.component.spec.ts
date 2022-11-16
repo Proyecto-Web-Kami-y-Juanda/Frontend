@@ -26,4 +26,7 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+    it('should create', () => {
+       component.onSubmit()
+    });
 });
