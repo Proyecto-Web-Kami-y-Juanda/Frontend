@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h3>Usuarios</h3>
+        <button (click) = "nuevo()" type="button" class="btn btn-primary" style="margin-bottom:5px">Nuevo</button>
+      </div>
+  
+      <div class="card-body">
+        <table class="table align-middle">
+          <thead>
+            <tr> 
+              <th>ID</th> 
+              <th>URL IMAGEN</th>
+              <th>NOMBRE</th>  
+              <th>DESCRIPCION</th> 
+              <th>EDITORIAL ID</th> 
+              <th>FECHA EDICION</th> 
+              <th>CANTIDAD</th> 
+            </tr> 
+          </thead>
+  
+          <tbody>
+            <tr class="align-top" *ngFor="let book of books" style="vertical-align:text-top">
+              <td class="align-top">{{book.id}}</td>
+              <td class="align-top">{{book.imageUrl}}</td>
+              <td class="align-top">{{book.name}}</td>
+              <td class="align-top">{{book.description}}</td>
+              <td class="align-top">{{book.editorialId}}</td>
+              <td class="align-top">{{book.fechaEdicion}}</td>
+              <td class="align-top">{{book.cantidad}}</td>
+              <td class="align-top">
+                <button [routerLink]="['/editarLibro/', book.id]" class="btn btn-warning">Editar</button>
+                <button (click)= "delete(book.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+              </td>
+        
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
+  

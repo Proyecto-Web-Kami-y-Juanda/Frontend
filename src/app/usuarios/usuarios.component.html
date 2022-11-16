@@ -1,57 +1,41 @@
-<div class="usuarios">
-  <h1 style="text-align:center">Usuarios</h1>
-  <button type="button" class="btn btn-primary" style="margin-bottom:5px">Nuevo</button>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3>Usuarios</h3>
+      <button (click) = "nuevo()" type="button" class="btn btn-primary" style="margin-bottom:5px">Nuevo</button>
+    </div>
 
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">id</th>
-    <th scope="col">Nombre</th>
-    <th scope="col">Apellido</th>
-    <th scope="col">Nickname</th>
-    <th scope="col">Cargo</th>
-    <th scope="col">Acciones</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr style="vertical-align:text-top">
-    <th scope="row">1</th>
-    <td>John</td>
-    <td>Ramirez</td>
-    <td>jramirez</td>
-    <td>administrador</td>
-    <td>
-      <div class="botones" >
-        <button class="btn btn-default">
-          <img src="assets/writing.png" width="40" />
-        </button>
-        <button class="btn btn-default">
-          <img src="assets/eliminar.png" width="30" />
-        </button>
-      </div>
-    </td>
-  </tr>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr> 
+            <th>NOMBRE USUARIO</th> 
+            <th>CONTRASEÑA</th>
+            <th>INACTIVO</th>  
+            <th>NOMBRES</th> 
+            <th>APELLIDOS</th> 
+            <th>FECHA</th> 
+            <th>CARGO</th> 
+          </tr> 
+        </thead>
 
-  </tbody>
-</table>
-  <nav aria-label="...">
-    <ul class="pagination  justify-content-center">
-      <li class="page-item disabled">
-        <span class="page-link">Previous</span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item active">
-      <span class="page-link">
-        2
-        <span class="sr-only"></span>
-      </span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Next</a>
-      </li>
-    </ul>
-  </nav>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios" style="vertical-align:text-top">
+            <td>{{usuario.userName}}</td>
+            <td>{{usuario.password}}</td>
+            <td>{{usuario.inactivate}}</td>
+            <td>{{usuario.names}}</td>
+            <td>{{usuario.lastNames}}</td>
+            <td>{{usuario.date}}</td>
+            <td>{{usuario.position}}</td>
+            <td>
+              <button [routerLink]="['/edit/', usuario.userName]" class="btn btn-warning">Editar</button>
+              <button (click)= "delete(usuario.userName)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+            </td>
+      
+      </table>
+    </div>
+  </div>
 </div>
 
 

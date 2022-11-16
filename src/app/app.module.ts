@@ -15,6 +15,14 @@ import { EditorialComponent } from './editorial/editorial.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModLibroComponent } from './mod-libro/mod-libro.component';
 import { LibroInfoComponent } from './libro-info/libro-info.component';
+import { AddComponent } from './usuarios/add/add.component';
+import { EditComponent } from './usuarios/edit/edit.component';
+import {UsuariosService}from './usuarios.service'
+import { CommonModule } from '@angular/common';
+import { BooksMenuComponent } from './books/books-menu/books-menu.component';
+import { ListarComponent } from './books/listar/listar.component';
+import { AddBookComponent } from './books/add-book/add-book.component';
+import { EditBookComponent } from './books/edit-book/edit-book.component';
 
 
 @NgModule({
@@ -27,16 +35,23 @@ import { LibroInfoComponent } from './libro-info/libro-info.component';
     EditorialComponent,
     UsuariosComponent,
     ModLibroComponent,
-    LibroInfoComponent
+    LibroInfoComponent,
+    AddComponent,
+    EditComponent,
+    BooksMenuComponent,
+    ListarComponent,
+    AddBookComponent,
+    EditBookComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
