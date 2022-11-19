@@ -20,4 +20,11 @@ describe('BooksMenuComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+   it('on init ', () =>
+   {
+        component.ngOnInit();
+   });
+
+
 });

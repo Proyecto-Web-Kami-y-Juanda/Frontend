@@ -11,7 +11,9 @@ import { LoginService } from './login.service';
 export class BookService
 {
   resultados = new BehaviorSubject <Array<Book>>([]);
-  constructor(private http: HttpClient, private loginService: LoginService) { }
+  constructor(private http: HttpClient, 
+              private loginService: LoginService,
+              private httpClient: HttpClient) { }
 
   searchAllBooks(){
           this.http.get<Book[]>("http://localhost:8090/books/all").subscribe(
@@ -53,6 +55,13 @@ export class BookService
     "Authorization":this.loginService.getToken()
   }})
 }
+
+public libros(page: number, size: number, order: string, asc: boolean): Observable<any> {
+  return this.httpClient.get<any>("http://localhost:8090/libros?&#39" + `page=${page}&size=${size}&order=${order}&asc=${asc}`, {headers:{
+    "Authorization":this.loginService.getToken()
+  }});
+}
+
 
 updateBook(idParam: number, imageUrlParam: string, nameParam: string, descriptionParam: string, editorialIdParam:number, fechaEdicionParam: string, cantidadParam:number){
   console.log(idParam)

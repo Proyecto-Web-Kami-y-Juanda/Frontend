@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './usuarios.component';
 
 describe('UsuariosComponent', () => {
@@ -8,6 +8,7 @@ describe('UsuariosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientModule],
       declarations: [ UsuariosComponent ]
     })
     .compileComponents();
@@ -20,4 +21,7 @@ describe('UsuariosComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+ 
+
 });

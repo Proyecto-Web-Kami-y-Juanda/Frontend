@@ -9,7 +9,7 @@
         <table class="table align-middle">
           <thead>
             <tr> 
-              <th>ID</th> 
+              <th scope="col" (click)="setOrder('id')">ID</th> 
               <th>URL IMAGEN</th>
               <th>NOMBRE</th>  
               <th>DESCRIPCION</th> 
@@ -32,7 +32,21 @@
                 <button [routerLink]="['/editarLibro/', book.id]" class="btn btn-warning">Editar</button>
                 <button (click)= "delete(book.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
               </td>
-        
+            </tr>
+            <tr>
+              <td>
+                <i class="fas fa-angle-double-left fa-2x" (click)="rewind()">siguiente</i>
+              </td>
+              <td colspan="2">
+                <span *ngFor="let p of totalPages; let i = index">
+                  <a style="cursor: pointer;" (click)="setPage(i)"
+                  [ngClass]="{'text-primary': i === page }">{{ i+1 }}&nbsp;&nbsp;&nbsp;</a>
+                </span>
+              </td>
+              <td>
+                <i class="fas fa-angle-double-right fa-2x" (click)="forward()">atras</i>
+              </td>
+            </tr>
         </table>
       </div>
     </div>

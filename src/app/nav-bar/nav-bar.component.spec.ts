@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavBarComponent } from './nav-bar.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 describe('NavBarComponent', () => {
   let component: NavBarComponent;
@@ -7,6 +10,11 @@ describe('NavBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+    imports:[
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+    ],
       declarations: [ NavBarComponent ]
     })
     .compileComponents();
@@ -19,4 +27,8 @@ describe('NavBarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should create', () => {
+    component.ngOnInit()
+ });
+
 });
